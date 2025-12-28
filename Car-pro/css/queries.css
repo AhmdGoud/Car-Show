@@ -49,6 +49,9 @@ a{
     .links{
         display: none;
     }
+    .dropmenu-btn ion-icon{
+        display: block;
+    }
 }
 @media (max-width:660px){
     img{
