@@ -12,10 +12,8 @@
 html{
     scroll-behavior: smooth;
 }
-body{
-    font-family: "poppins", sans-serif; /* fonts: Source Sans Pro, lato san serif */
-}
 .container{
+    font-family: "poppins", sans-serif; /* fonts: Source Sans Pro, lato san serif */
     width: 90%;
     padding: 0 10px;
     margin: 0 auto;

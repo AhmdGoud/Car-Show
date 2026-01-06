@@ -1,6 +1,7 @@
 .landing-page{
     background-color: #eaeaea;
     min-height: 100vh;
+    width: 100%;
     overflow-x: hidden;
 }
 /*strat navbar*/
@@ -19,7 +20,8 @@ nav{
 .links li a{
     text-decoration: none;
     color: #222;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
     margin: 0 12px;
     font-weight: 500;
     position: relative;
@@ -132,14 +134,14 @@ img{
     right: -40px;
     z-index: 11;
 }
-.text{
+header .text{
     width: 70%;
 }
-h1{
+header .text h1{
     font-size: 44px;
     text-transform: capitalize;
 }
-h2{
+header .text h2{
     color: var(--main-color);
     text-transform: capitalize;
     font-size: 28px;
@@ -147,7 +149,7 @@ h2{
 h2 span{
     color: black;
 }
-p{
+header .text p{
     width: 55%;
     color: rgb(65, 64, 64);
     margin: 22px 0;

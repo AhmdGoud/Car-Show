@@ -1,0 +1,38 @@
+.the-cars{
+    display: flex;
+    gap: 10px;
+}
+.search{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+    outline: none;
+    background-color: transparent;
+}
+.show-cars{
+    max-width: 70%;
+}
+.cars-cards{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.car-card{
+    min-width: 200px;
+    border: 1px solid blue;
+    flex-grow: 1;
+    border-radius: 5px;
+    padding: 3px 8px;
+}
+.car-overview{
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+}
