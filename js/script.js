@@ -1,4 +1,3 @@
-
 const showDropMenuBtn = document.querySelector('.dropmenu-btn')
 const dropmenu = document.querySelector('.dropmenu')
 showDropMenuBtn.addEventListener('click', function(){
@@ -16,21 +15,21 @@ fetch("../cars.json")
             let carCard = document.createElement('div')
             carCard = `
             <div class="car-card">
-                <img src="${car.image_url}" alt="">
+                <div class="car-image"><img src="${car.image_url}" alt=""></div>
                 <div class="head">
                     <h4>${car.brand}</h4>
-                    <h3>${car.price}</h3>
+                    <h3>${car.price}$</h3>
                 </div>
                 
                 <div class="details">
-                    <p>${car.color}</p>
-                    <p>${car.fuel}</p>
-                    <p>${car.model}</p>
-                    <p>${car.mileage}</p>
-                    <p>${car.year}</p>
-                    <p>${car.transmission}</p>
+                    <p>model: ${car.model}</p>
+                    <p>color: ${car.color}</p>
+                    <p>fuel: ${car.fuel}</p>
+                    <p>mileage: ${car.mileage}</p>
+                    <p>year: ${car.year}</p>
+                    <p>transmission: ${car.transmission}</p>
                 </div>
-                <button>Schedule a visit</button>
+                <button>Overview Car</button>
             </div>
             `
             holder+= carCard

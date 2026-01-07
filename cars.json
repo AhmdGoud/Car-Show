@@ -9,7 +9,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 18000,
-    "image_url": "../images/" 
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car" 
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "fuel": "Petrol",
     "transmission": "Manual",
     "mileage": 25000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 9000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 40000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 15000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 23000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 8000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 50000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 20000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 60000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@
     "fuel": "Electric",
     "transmission": "Automatic",
     "mileage": 5000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 30000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 22000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 45000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 15,
@@ -177,7 +177,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 28000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 16,
@@ -189,7 +189,7 @@
     "fuel": "Hybrid",
     "transmission": "Automatic",
     "mileage": 7000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 17,
@@ -201,7 +201,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 16000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 18,
@@ -213,7 +213,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 42000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 19,
@@ -225,7 +225,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 55000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 20,
@@ -237,7 +237,7 @@
     "fuel": "Diesel",
     "transmission": "Automatic",
     "mileage": 9000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 21,
@@ -249,7 +249,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 14000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 22,
@@ -261,7 +261,7 @@
     "fuel": "Diesel",
     "transmission": "Automatic",
     "mileage": 38000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 23,
@@ -273,7 +273,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 6000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 24,
@@ -285,7 +285,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 19000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 25,
@@ -297,7 +297,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 60000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 26,
@@ -309,7 +309,7 @@
     "fuel": "Electric",
     "transmission": "Automatic",
     "mileage": 4000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 27,
@@ -321,7 +321,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 32000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 28,
@@ -333,7 +333,7 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 21000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 29,
@@ -345,7 +345,7 @@
     "fuel": "Hybrid",
     "transmission": "Automatic",
     "mileage": 8000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   },
   {
     "id": 30,
@@ -357,6 +357,6 @@
     "fuel": "Petrol",
     "transmission": "Automatic",
     "mileage": 35000,
-    "image_url": "../images/"
+    "image_url": "https://placehold.co/600x400?text=this+is+a+car"
   }
 ]
