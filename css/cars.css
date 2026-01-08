@@ -1,6 +1,7 @@
 .the-cars{
-    display: flex;
+    display: grid;
     gap: 10px;
+    grid-template-columns: 2fr 1fr;
 }
 .search{
     width: 100%;
@@ -12,29 +13,18 @@
     outline: none;
     background-color: transparent;
 }
-.show-cars{
-    max-width: 70%;
-}
-.cars-cards{
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+
 .car-card{
-    min-width: 200px;
-    max-width: 300px;
+    width: 100%;
     border: 1px solid blue;
-    flex: 1 1 auto;
+    display: flex;
     border-radius: 5px;
     position: relative;
-    padding-bottom: 50px;
+    margin-bottom: 10px;
 }
-.car-image{
-    height: 200px;
-}
+
 .car-card img{
-    max-width: 100%;
+    max-width: 300px;
     border-radius: 5px;
 }
 .car-card button{
@@ -48,6 +38,12 @@
     margin: 3px 8px;
     position: absolute;
     bottom: 10px;
+    cursor: pointer;
+}
+.head{
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 .head, .details{
     padding: 3px 8px;
@@ -57,24 +53,57 @@
     gap: 10px;
     flex-wrap: wrap;
     margin: 10px 0;
-    max-width: 250px;
 }
-.details p{
+
+.car-card .details p, .car-overview .details p{
     width: fit-content;
-    background-color: rgb(94, 141, 0);
+    background-color: #808080;
     color: whitesmoke;
     font-size: 12px;
     border-radius: 3px;
     padding: 3px 8px;
 }
+.car-card .details p{
+    display: none;
+}
 
+.car-card #model, .car-card #year{
+    display: block;
+}
 
-
+/* card car overview  */
 .car-overview{
-    width: 100%;
-    height: 500px;
+    width: fit-content;
+    height: 480px;
     border-radius: 5px;
     border: 1px solid blue;
-    padding: 3px 8px;
     margin-bottom: 10px;
+    position: sticky;
+    top: 50px;
+}
+.car-overview button{
+    display: none;
+}
+.car-overview .head{
+    margin-top: 20px;
+}
+.car-overview img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/* features loan and compare*/
+.features{
+    display: flex;
+    gap: 10px;
+    padding-left: 8px;
+    margin-top: 30px;
+}
+.features div{
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
 }
