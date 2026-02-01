@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Calculator | Cars.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #f5f5f5;
+        color: #333;
+      }
+
+      header {
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #333;
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        gap: 2rem;
+      }
+
+      nav a {
+        color: #666;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #1565c0;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+        color: #fff;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+      }
+
+      .calculator-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .calculator-card {
+        background: #fff;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .calculator-card h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: #1565c0;
+      }
+
+      .form-group {
+        margin-bottom: 2rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+
+      .input-wrapper {
+        position: relative;
+      }
+
+      .input-prefix {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        font-weight: 600;
+      }
+
+      .input-suffix {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        font-weight: 600;
+      }
+
+      input[type="number"],
+      input[type="range"] {
+        width: 100%;
+      }
+
+      input[type="number"] {
+        padding: 0.75rem 3rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      input[type="number"]:focus {
+        outline: none;
+        border-color: #1565c0;
+      }
+
+      input[type="range"] {
+        height: 8px;
+        border-radius: 5px;
+        background: #e0e0e0;
+        outline: none;
+        /* -webkit-appearance: none; */
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #1565c0;
+        cursor: pointer;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #1565c0;
+        cursor: pointer;
+        border: none;
+      }
+
+      .range-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        color: #666;
+      }
+
+      .current-value {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1565c0;
+      }
+
+      .btn-calculate {
+        width: 100%;
+        padding: 1rem;
+        background: #1565c0;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .btn-calculate:hover {
+        background: #0d47a1;
+      }
+
+      .results-card {
+        background: #fff;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .results-card h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: #1565c0;
+      }
+
+      .monthly-payment {
+        background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+        color: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .monthly-payment-label {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 0.5rem;
+      }
+
+      .monthly-payment-amount {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+
+      .result-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .result-item:last-child {
+        border-bottom: none;
+      }
+
+      .result-label {
+        color: #666;
+        font-weight: 500;
+      }
+
+      .result-value {
+        font-weight: 600;
+        color: #333;
+      }
+
+      .breakdown-section {
+        background: #fff;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .breakdown-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        color: #1565c0;
+      }
+
+      .chart-container {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .pie-chart {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .chart-legend {
+        flex: 1;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .legend-color {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+      }
+
+      .legend-info {
+        flex: 1;
+      }
+
+      .legend-label {
+        font-weight: 600;
+        color: #333;
+      }
+
+      .legend-amount {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .amortization-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2rem;
+      }
+
+      .amortization-table th,
+      .amortization-table td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .amortization-table th {
+        background: #f9f9f9;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .amortization-table tr:hover {
+        background: #f9f9f9;
+      }
+
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 4rem;
+      }
+
+      @media (max-width: 968px) {
+        .calculator-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .chart-container {
+          flex-direction: column;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .monthly-payment-amount {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <a href="#" class="logo">Cars.</a>
+        <nav>
+          <a href="#">HOME</a>
+          <a href="#">ABOUT</a>
+          <a href="#">REVIEW</a>
+          <a href="#">CONTACT</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="hero">
+      <h1>Car Loan Calculator</h1>
+      <p>Calculate your monthly payments and plan your budget</p>
+    </div>
+
+    <div class="container">
+      <div class="calculator-wrapper">
+        <div class="calculator-card">
+          <h2>Loan Details</h2>
+          <form id="loanForm">
+            <div class="form-group">
+              <label for="carPrice">Car Price</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input
+                  type="number"
+                  id="carPrice"
+                  value="25000"
+                  min="0"
+                  step="1000"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="downPayment">Down Payment</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">$</span>
+                <input
+                  type="number"
+                  id="downPayment"
+                  value="5000"
+                  min="0"
+                  step="500"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="interestRate">Interest Rate (%)</label>
+              <input
+                type="range"
+                id="interestRate"
+                min="0"
+                max="20"
+                step="0.1"
+                value="5.5"
+              />
+              <span class="current-value" id="interestRateValue">5.5%</span>
+              <div class="range-labels">
+                <span>0%</span>
+                <span>20%</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="loanTerm">Loan Term (Years)</label>
+              <input
+                type="range"
+                id="loanTerm"
+                min="1"
+                max="7"
+                step="1"
+                value="5"
+              />
+              <span class="current-value" id="loanTermValue">5 Years</span>
+              <div class="range-labels">
+                <span>1 Year</span>
+                <span>7 Years</span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn-calculate"
+              onclick="calculateLoan()"
+            >
+              Calculate
+            </button>
+          </form>
+        </div>
+
+        <div class="results-card">
+          <h2>Payment Summary</h2>
+          <div class="monthly-payment">
+            <div class="monthly-payment-label">Monthly Payment</div>
+            <div class="monthly-payment-amount" id="monthlyPayment">$0</div>
+          </div>
+
+          <div class="result-item">
+            <span class="result-label">Loan Amount</span>
+            <span class="result-value" id="loanAmount">$0</span>
+          </div>
+
+          <div class="result-item">
+            <span class="result-label">Total Interest</span>
+            <span class="result-value" id="totalInterest">$0</span>
+          </div>
+
+          <div class="result-item">
+            <span class="result-label">Total Amount</span>
+            <span class="result-value" id="totalAmount">$0</span>
+          </div>
+
+          <div class="result-item">
+            <span class="result-label">Number of Payments</span>
+            <span class="result-value" id="numberOfPayments">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="breakdown-section">
+        <h2>Payment Breakdown</h2>
+        <div class="chart-container">
+          <canvas id="pieChart" width="200" height="200"></canvas>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-color" style="background: #1565c0"></div>
+              <div class="legend-info">
+                <div class="legend-label">Principal</div>
+                <div class="legend-amount" id="principalAmount">$0</div>
+              </div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #ff6b6b"></div>
+              <div class="legend-info">
+                <div class="legend-label">Interest</div>
+                <div class="legend-amount" id="interestAmount">$0</div>
+              </div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #4ecdc4"></div>
+              <div class="legend-info">
+                <div class="legend-label">Down Payment</div>
+                <div class="legend-amount" id="downPaymentAmount">$0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #333">
+          Amortization Schedule (First Year)
+        </h3>
+        <table class="amortization-table" id="amortizationTable">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Payment</th>
+              <th>Principal</th>
+              <th>Interest</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody id="amortizationBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Cars. All rights reserved.</p>
+    </footer>
+
+    <script>
+      var carPriceInput = document.getElementById("carPrice");
+      var downPaymentInput = document.getElementById("downPayment");
+      var interestRateInput = document.getElementById("interestRate");
+      var loanTermInput = document.getElementById("loanTerm");
+      var interestRateValue = document.getElementById("interestRateValue");
+      var loanTermValue = document.getElementById("loanTermValue");
+
+      interestRateInput.addEventListener("input", function () {
+        interestRateValue.textContent = this.value + "%";
+      });
+
+      loanTermInput.addEventListener("input", function () {
+        loanTermValue.textContent = this.value + " Years";
+      });
+
+      carPriceInput.addEventListener("input", calculateLoan);
+      downPaymentInput.addEventListener("input", calculateLoan);
+      interestRateInput.addEventListener("input", calculateLoan);
+      loanTermInput.addEventListener("input", calculateLoan);
+
+      function formatCurrency(amount) {
+        return "$" + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+      }
+
+      function calculateLoan() {
+        var carPrice = parseFloat(carPriceInput.value) || 0;
+        var downPayment = parseFloat(downPaymentInput.value) || 0;
+        var annualRate = parseFloat(interestRateInput.value) || 0;
+        var years = parseFloat(loanTermInput.value) || 1;
+
+        var loanAmount = carPrice - downPayment;
+        var monthlyRate = annualRate / 100 / 12;
+        var numberOfPayments = years * 12;
+
+        var monthlyPayment;
+        if (monthlyRate === 0) {
+          monthlyPayment = loanAmount / numberOfPayments;
+        } else {
+          monthlyPayment =
+            (loanAmount *
+              (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments))) /
+            (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+        }
+
+        var totalAmount = monthlyPayment * numberOfPayments;
+        var totalInterest = totalAmount - loanAmount;
+
+        document.getElementById("monthlyPayment").textContent =
+          formatCurrency(monthlyPayment);
+        document.getElementById("loanAmount").textContent =
+          formatCurrency(loanAmount);
+        document.getElementById("totalInterest").textContent =
+          formatCurrency(totalInterest);
+        document.getElementById("totalAmount").textContent =
+          formatCurrency(totalAmount);
+        document.getElementById("numberOfPayments").textContent =
+          numberOfPayments + " months";
+
+        document.getElementById("principalAmount").textContent =
+          formatCurrency(loanAmount);
+        document.getElementById("interestAmount").textContent =
+          formatCurrency(totalInterest);
+        document.getElementById("downPaymentAmount").textContent =
+          formatCurrency(downPayment);
+
+        drawPieChart(loanAmount, totalInterest, downPayment);
+        generateAmortizationTable(
+          loanAmount,
+          monthlyRate,
+          monthlyPayment,
+          numberOfPayments,
+        );
+      }
+
+      function drawPieChart(principal, interest, downPayment) {
+        var canvas = document.getElementById("pieChart");
+        var ctx = canvas.getContext("2d");
+        var total = principal + interest + downPayment;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var radius = 90;
+
+        var principalAngle = (principal / total) * 2 * Math.PI;
+        var interestAngle = (interest / total) * 2 * Math.PI;
+        var downPaymentAngle = (downPayment / total) * 2 * Math.PI;
+
+        var currentAngle = -Math.PI / 2;
+
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(
+          centerX,
+          centerY,
+          radius,
+          currentAngle,
+          currentAngle + principalAngle,
+        );
+        ctx.closePath();
+        ctx.fillStyle = "#1565C0";
+        ctx.fill();
+
+        currentAngle += principalAngle;
+
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(
+          centerX,
+          centerY,
+          radius,
+          currentAngle,
+          currentAngle + interestAngle,
+        );
+        ctx.closePath();
+        ctx.fillStyle = "#FF6B6B";
+        ctx.fill();
+
+        currentAngle += interestAngle;
+
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(
+          centerX,
+          centerY,
+          radius,
+          currentAngle,
+          currentAngle + downPaymentAngle,
+        );
+        ctx.closePath();
+        ctx.fillStyle = "#4ECDC4";
+        ctx.fill();
+      }
+
+      function generateAmortizationTable(
+        principal,
+        monthlyRate,
+        monthlyPayment,
+        totalMonths,
+      ) {
+        var tbody = document.getElementById("amortizationBody");
+        tbody.innerHTML = "";
+
+        var balance = principal;
+        var displayMonths = Math.min(12, totalMonths);
+
+        for (var i = 1; i <= displayMonths; i++) {
+          var interestPayment = balance * monthlyRate;
+          var principalPayment = monthlyPayment - interestPayment;
+          balance -= principalPayment;
+
+          var row = document.createElement("tr");
+          row.innerHTML =
+            "<td>" +
+            i +
+            "</td>" +
+            "<td>" +
+            formatCurrency(monthlyPayment) +
+            "</td>" +
+            "<td>" +
+            formatCurrency(principalPayment) +
+            "</td>" +
+            "<td>" +
+            formatCurrency(interestPayment) +
+            "</td>" +
+            "<td>" +
+            formatCurrency(balance) +
+            "</td>";
+          tbody.appendChild(row);
+        }
+      }
+
+      calculateLoan();
+    </script>
+  </body>
+</html>
